@@ -29,6 +29,7 @@ public class Employee {
  //   @NotBlank
   //  @Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{4,}")
     private String password;
+
     private String address;
     private String address2;
     private String city;
