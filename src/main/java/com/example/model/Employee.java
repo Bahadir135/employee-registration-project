@@ -1,10 +1,16 @@
 package com.example.model;
 
 import jakarta.validation.constraints.*;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Employee {
 
  //   @NotNull -----> Field shouldn't be null
