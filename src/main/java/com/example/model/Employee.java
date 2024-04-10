@@ -1,9 +1,6 @@
 package com.example.model;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
@@ -20,10 +17,17 @@ public class Employee {
     private String lastName;
 
     //Thymeleaf accepts yyyy-MM-dd, but LocalDate accepts mm-dd-yyyy - yyyy-dd-mm
+
+  //  @NotNull
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthday;
 
+ //   @NotBlank
+ //   @Email
     private String email;
+
+ //   @NotBlank
+  //  @Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{4,}")
     private String password;
     private String address;
     private String address2;
