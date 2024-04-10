@@ -4,6 +4,7 @@ package com.example.controller;
 import com.example.bootstrap.DataGenerator;
 import com.example.model.Employee;
 import com.example.service.EmployeeService;
+import jakarta.validation.Valid;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,7 +34,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/insert")
-    public String insertEmployee(@ModelAttribute("employee") Employee employee, Model model){
+    public String insertEmployee(@ModelAttribute("employee") @Valid Employee employee){
         employeeService.saveEmployee(employee);
         return "redirect:employee/list";
     }

@@ -1,15 +1,25 @@
 package com.example.model;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
 public class Employee {
 
+ //   @NotNull -----> Field shouldn't be null
+ //   @NotEmpty -----> Field should not be empty('') + @NotNull
+  //  @NotBlank ----> Field should not be blank('  ') + @NotEmpty  + @NoNull
+
+    @NotBlank
+    @Size(max =12,min =2)
     private String firstName;
     private String lastName;
 
-    //Thymleaf accepts yyyy-MM-dd, but LocalDate accepts mm-dd-yyyy - yyyy-dd-mm
+    //Thymeleaf accepts yyyy-MM-dd, but LocalDate accepts mm-dd-yyyy - yyyy-dd-mm
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthday;
 
