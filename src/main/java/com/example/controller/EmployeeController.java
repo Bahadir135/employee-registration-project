@@ -43,7 +43,7 @@ public class EmployeeController {
         }
 
         employeeService.saveEmployee(employee);
-        return "redirect:employee/list";
+        return "redirect:/employee/list";
     }
 
     @GetMapping("/list")
